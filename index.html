@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
     <title>Retirement Income Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<main id="simulation">
-  <div class="container">
-     <div class="headline">
-        <h2>Retirement Portfolio Calculator</h2>
-        <p>Learn  how your retirement portfolio would have performed during the 2008 stock market crash invested in 3 different portfolios. </p>
-      </div>
-    <div class="left-col" id="l-c">
-      <div class="left-col-top">
-        <h3>Your Retirement Savings</h3>
-      </div>
-      <div class="left-col-bottom">
-        <div class="formArea">
-        <label for="accountType">Select your type of retirement account</label>
-        <div class="selectAccount">
-          <select class="selectBox" name="accountType" id="accountType">
-            <option value="" disabled="disabled" selected="selected">Select your account type(s)</option>
-            <option name="accountType" id="accountType">401(k)</option>
-            <option name="accountType" id="accountType">IRA</option>
-            <option name="accountType" id="accountType">TSP</option>
-            <option name="accountType" id="accountType">403(b)</option>
-            <option name="accountType" id="accountType">SEP</option>
-            <option name="accountType" id="accountType">Cash</option>
-            </select>
-        </div>
-        <label for="income">Enter the value of your savings account(s)</label>
-        <div class="amountInput"><div id="cashSym">$</div><input type="text" name="income" id="income" placeholder="Account(s) Value" maxlength="13"></div>
-        <button class="step1">Calculate</button>
-        <p class="discl">Disclaimer: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, minus, quis! Ratione nemo repellendus rem nihil unde, veniam molestias alias culpa autem soluta at omnis saepe adipisci reiciendis, consectetur laborum!</p>
-      </div>
-      </div>
-    </div>
-     <div class="right-col" id="r-c">
+    <main id="simulation">
+        <div class="container">
+            <div class="headline">
+                <h2>Retirement Portfolio Calculator</h2>
+                <p>Learn how your retirement portfolio would have performed during the 2008 stock market crash invested in 3 different portfolios. </p>
+            </div>
+            <div class="left-col" id="l-c">
+                <div class="left-col-top">
+                    <h3>Your Retirement Savings</h3>
+                </div>
+                <div class="left-col-bottom">
+                    <div class="formArea">
+                        <label for="accountType">Select your type of retirement account</label>
+                        <div class="selectAccount">
+                            <select class="selectBox" name="accountType" id="accountType">
+                                <option value="" disabled="disabled" selected="selected">Select your account type(s)</option>
+                                <option name="accountType" id="accountType">401(k)</option>
+                                <option name="accountType" id="accountType">IRA</option>
+                                <option name="accountType" id="accountType">TSP</option>
+                                <option name="accountType" id="accountType">403(b)</option>
+                                <option name="accountType" id="accountType">SEP</option>
+                                <option name="accountType" id="accountType">Cash</option>
+                            </select>
+                        </div>
+                        <label for="income">Enter the value of your savings account(s)</label>
+                        <div class="amountInput">
+                            <div id="cashSym">$</div><input type="text" name="income" id="income" placeholder="Account(s) Value" maxlength="13">
+                        </div>
+                        <button class="step1">Calculate</button>
+                        <p class="discl">Disclaimer: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, minus, quis! Ratione nemo repellendus rem nihil unde, veniam molestias alias culpa autem soluta at omnis saepe adipisci reiciendis, consectetur laborum!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-col" id="r-c">
                 <div class="right-col-headline">
+                  <div class="r-c-title">
                     <figure><img src="images/coins-scs.jpg" alt=""></figure>
                     <h2>Portfolio Scenarios</h2>
+                    <div class="underline black_"></div>
+                  </div>
                     <div id="stocks-m"><span class="silverDot"></span> Stocks</div>
-                    <div><span class="goldDot"></span> Gold</div>
+                    <div id="gold-m"><span class="goldDot"></span> Gold</div>
                 </div>
                 <div class="resultBox">
                     <div class="result">
                       <div class="resultTop">
-                        <div class="graphImg">
+                        <div class="graphImg" id="grA">
                             <img src="images/100.png" alt="100% stocks graph">
                         </div>
-                        <div class="percentage">100% Stocks</div>
+                        <div class="percentage">100% DJIA Stocks</div>
                         <div id="bigNumber_A">A</div>
                       </div>
                       <div class="arrowBox">
@@ -72,10 +79,10 @@
                     </div>
                     <div class="result">
                       <div class="resultTop">
-                        <div class="graphImg">
+                        <div class="graphImg" id="grB">
                             <img src="images/70-30.png" alt="70-30% stocks/gold graph">
                         </div>
-                        <div class="percentage">70% Stocks / 30% Gold</div>
+                        <div class="percentage">70% DJIA Stocks / 30% Gold</div>
                         <div id="bigNumber_B">B</div>
                       </div>
                       <div class="arrowBox">
@@ -96,10 +103,10 @@
                     </div>
                     <div class="result">
                       <div class="resultTop">
-                        <div class="graphImg">
+                        <div class="graphImg" id="grC">
                             <img src="images/50-50.png" alt="50/50% stocks/gold graph">
                         </div>
-                        <div class="percentage">50% Stocks / 50% Gold</div>
+                        <div class="percentage">50% DJIA Stocks / 50% Gold</div>
                         <div id="bigNumber_C">C</div>
                       </div>
                       <div class="arrowBox">
@@ -123,28 +130,10 @@
                     <img src="images/graph-init.jpg" alt="">
                 </figure>
             </div>
-  </div>
-</main>
-<div id="formModal" class="modal">
-  <div class="modal-content">
-    <!-- <span class="close">&times;</span> -->
-      <div class="formWrap">
-          <p>Enter Your Information to Continue:</p>
-          <input type="text" name="first_name" placeholder="First Name" id="first_name" required>
-          <input type="text" name="last_name" placeholder="Last Name" id="last_name" required>
-          <input type="email" name="email_address" placeholder="Email" id="email" required>
-          <input type="text" name="phone_cell" id="phone_cell" placeholder="Phone Number">
-          <p class="validationError" id="invalidEmailNotice">Please enter a valid email address.</p>
-          <button class="step2">Get Your Results</button>
-          <div class="discl2">
-            By clicking the button above, you agree to Goldco's Privacy Policy and authorize Goldco to contact you on a recorded line at the telephone or mobile number you entered using automated telephone technology including auto-dialers, and text messages, even if your telephone or mobile number is currently listed on any state, federal, or corporate "Do Not Call" list. No purchase required. Message and data rates may apply. By submitting your information, you also agree to receive e-mail marketing from Goldco, our affiliated companies and third-party advertisers.
-          </div>
-      </div>
-  </div>
-</div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="calculator.js"></script>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="calculator.js"></script>
 </body>
+
 </html>
-
-

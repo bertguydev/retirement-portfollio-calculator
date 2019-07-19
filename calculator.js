@@ -20,7 +20,7 @@
         $('#r1, #r2, #r3').css("color", "#000");
         $('#percentChange_1, #percentChange_2, #percentChange_3').html("0%");
         $('#percentChange_1, #percentChange_2, #percentChange_3').css("color", "#000");
-        $('figure.graph img').attr('src', 'images/graph-init.jpg');
+        $('figure.graph img').attr('src', '../wp-content/themes/porto-child/calculator/images/graph-init.jpg');
         killSwitch = false;
       }
 
@@ -68,7 +68,7 @@
               }
           }, 1);
 
-          $('figure.graph img').attr('src', 'images/graph-finish.jpg');
+          $('figure.graph img').attr('src', '../wp-content/themes/porto-child/calculator/images/graph-finish.jpg');
 
           // These functions control how fast the numbers change
           function subtractAnimation(tickerSpeed) {
@@ -163,38 +163,30 @@
 
     function updateDOM() {
         function updatePercentages(stockPercent, goldPercent) {
-          let pHTML = '<div class="m-stocks-row"><p>Stocks</p><span class="silverDot"></span><p>' + stockPercent + '</p></div>';
-                pHTML += '<div class="m-gold-row"><p>Stocks</p><span class="goldDot"></span><p>' + goldPercent + '</p></div>';
-                return pHTML;
-        }
+            var pHTML = '<div class="m-stocks-row"><p>STOCKS</p><span class="silverDot"></span><p>' + stockPercent + '</p></div>';
+                  pHTML += '<div class="m-gold-row"><p>GOLD</p><span class="goldDot"></span><p>' + goldPercent + '</p></div>';
+                  return pHTML;
+          }
         let mobileDropDown = function(op){return '<button class="mobileDropDown">' + op + '</button>'};
         let wW = $(window).width();
         let disclaimer = $('.discl');
-        let mobileStartBtn = '<button class="mobileStartBtn">Start</button>';
+        const mobileStartBtn = '<a href="#l-c"><button class="mobileStartBtn">Start</button></a>';
         if (wW <= 992) {
             $('.right-col').append(disclaimer);
         }else {
             $('.formArea').append(disclaimer);
         }
         if (wW <= 600 ) {
+           if ( !$('.mobileStartBtn').is(':visible') ) {
+              $('.headline').append(mobileStartBtn);
+            }
             if ($('.mobileDropDown').is(':visible') == false) {
-          }
+              $('.percentage').after(mobileDropDown('+'));
+            }
           $('.resultBox .result:nth-child(1) .percentage').html(updatePercentages('100%', '0%'));
           $('.resultBox .result:nth-child(2) .percentage').html(updatePercentages('70%', '30%'));
           $('.resultBox .result:nth-child(3) .percentage').html(updatePercentages('50%', '50%'));
-          let resultTop = document.querySelectorAll('.resultTop');
-                for(var i=0; i < resultTop.length; i++){
-                    resultTop[i].addEventListener('touchend', function (ev) {
 
-                        let graphImg = $(this)[0].children[0];
-                        if ($(graphImg).is(':visible') == false) {
-                          $(graphImg).show();
-                        }else {
-                            $(graphImg).hide();
-                        }
-
-                    }, false);
-           }
         }
     }
 
@@ -202,8 +194,41 @@
     if ( loadWidth <= 992 ) {
         updateDOM();
     }
-   jQuery('body').bind('touchmove', function(e){e.preventDefault()});
 
     $( window ).on( 'resize', updateDOM );
+    $('button.mobileDropDown').on('tap touchend', function(){
+                      let thisIndex = $(this)[0].parentElement.children[3].innerHTML;
+                      console.log(thisIndex);
+                      //console.log(thisIndex);
+                      switch(thisIndex) {
+                        case 'A':
+                        if ($('#grA').is(':visible') !== true)  {
+                          $('#grA').css('display', 'block');
+                          $('.result:nth-child(1) .mobileDropDown').html('-');
+                        }else {
+                          $('#grA').css('display', 'none');
+                          $('.result:nth-child(1) .mobileDropDown').html('+');
+                        }
+                        break;
+                        case 'B':
+                        if ($('#grB').is(':visible') !== true)  {
+                          $('#grB').css('display', 'block');
+                          $('.result:nth-child(2) .mobileDropDown').html('-');
+                        }else {
+                          $('#grB').css('display', 'none');
+                          $('.result:nth-child(2) .mobileDropDown').html('+');
+                        }
+                        break;
+                        case 'C':
+                        if ($('#grC').is(':visible') !== true)  {
+                          $('#grC').css('display', 'block');
+                          $('.result:nth-child(3) .mobileDropDown').html('-');
+                        }else {
+                          $('#grC').css('display', 'none');
+                          $('.result:nth-child(3) .mobileDropDown').html('+');
+                        }
+                        break;
+                      }
+                  });
 
   });

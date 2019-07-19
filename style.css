@@ -164,14 +164,6 @@ label {
     margin: 0 0 28px;
 }
 
-.headline h2:after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    background: #000;
-    width: 38px;
-    margin: 60px 0px 0 -200px;
-}
 
 .headline p {
     font-size: 16px;
@@ -255,14 +247,7 @@ label {
     letter-spacing: 2px;
 }
 
-.right-col-headline h2:after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 38px;
-    background: #000;
-    margin: 42px 0 0 -132px;
-}
+
 
 .counterArea {
     width: 100%;
@@ -451,19 +436,11 @@ button.step2 {
     content: "";
     height: 39px;
     width: 38px;
-    background: url(https://goldcoira3.com/ric_v2/images/calc.jpg);
+    background: url(images/calc.jpg);
     position: absolute;
     margin: 0 0 0 -44px;
 }
 
-.left-col h3:after {
-    position: absolute;
-    height: 1px;
-    width: 36px;
-    background: #fff;
-    content: "";
-    margin: 45px -156px;
-}
 
 #stocks-m {
     margin: 0 20px 0 50px;
@@ -755,16 +732,20 @@ figure.graph img {
         display: none;
     }
 
-    #simulation button.mobileDropDown {
-        order: 3;
-        background: none;
-        border: 0;
-        color: #333;
-        font-size: 39px;
-        font-weight: bold;
-        position: absolute;
-        right: 25px;
-    }
+#simulation button.mobileDropDown {
+    order: 3;
+    background: none;
+    border: 0;
+    color: #333;
+    font-size: 39px;
+    font-weight: bold;
+    position: absolute;
+    right: 25px;
+    width: 21%;
+    padding: 1px 0;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+}
 
     #bigNumber_A,
     #bigNumber_B,
