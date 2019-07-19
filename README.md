@@ -20,6 +20,9 @@ Include calculator.js to your page. refer to index.php to see markup needed for 
 
 * [jQuery v3.4.1]https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
 
+## Version 1.0.1
+Made updates for mobile usage
+
 ## Version 1.0.0
 
 Using [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
