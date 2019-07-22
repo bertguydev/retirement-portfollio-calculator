@@ -20,7 +20,7 @@
         $('#r1, #r2, #r3').css("color", "#000");
         $('#percentChange_1, #percentChange_2, #percentChange_3').html("0%");
         $('#percentChange_1, #percentChange_2, #percentChange_3').css("color", "#000");
-        $('figure.graph img').attr('src', '../wp-content/themes/porto-child/calculator/images/graph-init.jpg');
+        $('figure.graph img').attr('src', 'images/graph-init.jpg');
         killSwitch = false;
       }
 
