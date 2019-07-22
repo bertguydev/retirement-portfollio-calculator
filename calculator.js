@@ -68,7 +68,7 @@
               }
           }, 1);
 
-          $('figure.graph img').attr('src', '../wp-content/themes/porto-child/calculator/images/graph-finish.jpg');
+          $('figure.graph img').attr('src', 'images/graph-finish.jpg');
 
           // These functions control how fast the numbers change
           function subtractAnimation(tickerSpeed) {
